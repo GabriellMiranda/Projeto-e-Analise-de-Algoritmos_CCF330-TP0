@@ -7,17 +7,19 @@
 
 #define LINHASIMBOLOSOMA 3
 #define COLUNASSIMBOLOSOMA 3
+#define LINHASSIMBOLOPONTO 3
+#define COLUNASSIMBOLOPONTO 3
+#define LINHASSIMBOLOX 3
+#define COLUNASSIMBOLOX 3
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-typedef struct{
-    char **figura;
-}simboloSoma;
-
 char** allocaEspaco(int linhas,int colunas);
-void criaFiguraSoma(simboloSoma *simbolosoma);
+char** criaFiguraSoma();
+char** criaFiguraPonto();
+char** criaFiguraX();
 void imprimeFigura(char **figura,int linhas,int colunas);
 
 #endif //AJUDA_FIGURAS_H

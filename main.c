@@ -10,28 +10,9 @@ int main(){
     printf("|--------------------------------------------------------------------|\n\n");
     int tipofigura;
     int qtdfiguras;
-    int opcao2;
     Tela tela;
-    bool op1 = true;
     criaQuadro(&tela);
-    CriaSoma(&tela, 20);
-
-    //------------ Teste de inserção de figura ----------
-//    simboloSoma teste;
-//    criaFiguraSoma(&teste);
-//    coordenadasQuadro coordena;
-//    coordena.linhaInicio = 9;
-//    coordena.linhaFim = 12;
-//    coordena.colunaInicio = 9;
-//    coordena.colunaFim = 12;
-//    insereFigura(&tela,teste.figura,&coordena);
-    // ---------------------------------------------------
-
-
-    imprimeQuadro(&tela);
-
-
-    while(op1 == true){
+    while(1){
         printf("|--------------------------------------------------------------------|\n");
         printf("|PROGRAMA GERADOR DE ARTE:                                           |\n");
         printf("|=========================                                           |\n");
@@ -44,8 +25,27 @@ int main(){
         printf("|--------------------------------------------------------------------|\n");
         printf("Digite o tipo de figura basica desejada: ");
         scanf("%d", &tipofigura);
-        printf("Digite a quantidade de figura(menor ou igual a zero para aleatorio: )");
+        printf("\nDigite a quantidade de figura(menor ou igual a zero para aleatorio): ");
         scanf("%d", &qtdfiguras);
+        if(tipofigura <= 0 || tipofigura >=6){
+            break;
+        }
+        else if(tipofigura == 1){
+            allocaFiguras(&tela,criaFiguraPonto(),LINHASSIMBOLOPONTO,COLUNASSIMBOLOPONTO,qtdfiguras);
+            imprimeQuadro(&tela);
+        }
+        else if(tipofigura == 2){
+            allocaFiguras(&tela,criaFiguraSoma(),LINHASIMBOLOSOMA,COLUNASSIMBOLOSOMA,qtdfiguras);
+            imprimeQuadro(&tela);
+        }
+        else if(tipofigura == 3){
+            allocaFiguras(&tela,criaFiguraX(),LINHASSIMBOLOX,COLUNASSIMBOLOX,qtdfiguras);
+            imprimeQuadro(&tela);
+        }
+        else if(tipofigura == 4){
+            allocaFigurasAleatorias(&tela,qtdfiguras);
+            imprimeQuadro(&tela);
+        }
     }
     return 0;
 }
