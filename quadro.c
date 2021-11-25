@@ -34,6 +34,26 @@ void insereFigura(Tela *tela,char **figura,coordenadasQuadro *coordenadas){
     }
 }
 
+void CriaSoma(Tela *tela, int quantidade){
+    srand(time(NULL));
+    int coluna, linha;
+    for(int i = 0; i < quantidade; i++){
+        while (true){
+            linha = 1 + (rand() % LINHASQUADRO-2);
+            coluna = 1 + (rand() % COLUNASQUADRO-2);
+            if(tela->quadro[linha][coluna] == ' ' && tela->quadro[linha+1][coluna] == ' ' && tela->quadro[linha-1][coluna] == ' ' && tela->quadro[linha][coluna-1] == ' ' && tela->quadro[linha][coluna+1] == ' '){
+                break;
+            }
+        }
+        tela->quadro[linha][coluna] = '*';
+        tela->quadro[linha+1][coluna] = '*';
+        tela->quadro[linha-1][coluna] = '*';
+        tela->quadro[linha][coluna+1] = '*';
+        tela->quadro[linha][coluna-1] = '*';
+        
+    }
+}
+
 void imprimeQuadro(Tela *tela){
     for(int i = 0; i < LINHASQUADRO; i++){
         for(int j = 0; j < COLUNASQUADRO; j++){

@@ -8,10 +8,13 @@ int main(){
     printf("|                  Gabriel Miranda - EFO3857                         |\n");
     printf("|                    Pedro Maia - EF08983                            |\n");
     printf("|--------------------------------------------------------------------|\n\n");
-    int opcao1;
+    int tipofigura;
+    int qtdfiguras;
+    int opcao2;
     Tela tela;
     bool op1 = true;
     criaQuadro(&tela);
+    CriaSoma(&tela, 20);
 
     //------------ Teste de inserção de figura ----------
 //    simboloSoma teste;
@@ -38,16 +41,11 @@ int main(){
         printf("|   3 - letra x com asteriscos.                                      |\n");
         printf("|   4 - figuras aleatorias.                                          |\n");
         printf("|   5 - opcao de obra de arte criada pelo aluno:                     |\n");
-        printf("|   6 - sair.                                                        |\n");
         printf("|--------------------------------------------------------------------|\n");
         printf("Digite o tipo de figura basica desejada: ");
-        scanf("%d", &opcao1);
+        scanf("%d", &tipofigura);
         printf("Digite a quantidade de figura(menor ou igual a zero para aleatorio: )");
-        if(opcao1 == 6){
-            op1 = false;
-        }else{
-            printf("Opcao Invalida!!\n");
-        }
+        scanf("%d", &qtdfiguras);
     }
     return 0;
 }

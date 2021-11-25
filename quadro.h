@@ -6,7 +6,7 @@
 
 #include "figuras.h"
 #include <stdbool.h>
-
+#include <time.h>
 typedef struct{
     char quadro[LINHASQUADRO][COLUNASQUADRO];
 }Tela;
@@ -22,5 +22,5 @@ void criaQuadro(Tela *tela);
 void insereFigura(Tela *tela,char **figura,coordenadasQuadro *coordenadas);
 coordenadasQuadro criaCoordenada(Tela *tela,int linhas,int colunas);
 void imprimeQuadro(Tela *tela);
-
+void CriaSoma(Tela *tela, int quantidade);
 #endif
