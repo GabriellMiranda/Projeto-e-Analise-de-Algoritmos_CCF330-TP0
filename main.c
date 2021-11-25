@@ -12,27 +12,42 @@ int main(){
     Tela tela;
     bool op1 = true;
     criaQuadro(&tela);
+
+    //------------ Teste de inserção de figura ----------
+//    simboloSoma teste;
+//    criaFiguraSoma(&teste);
+//    coordenadasQuadro coordena;
+//    coordena.linhaInicio = 9;
+//    coordena.linhaFim = 12;
+//    coordena.colunaInicio = 9;
+//    coordena.colunaFim = 12;
+//    insereFigura(&tela,teste.figura,&coordena);
+    // ---------------------------------------------------
+
+
     imprimeQuadro(&tela);
-//    while(op1 == true){
-//        printf("|--------------------------------------------------------------------|\n");
-//        printf("|PROGRAMA GERADOR DE ARTE:                                           |\n");
-//        printf("|=========================                                           |\n");
-//        printf("|Escolha o tipo de figura basica a ser usada para criar a obra:      |\n");
-//        printf("|   1 - asterisco simples.                                           |\n");
-//        printf("|   2 - simbolo de soma com asteriscos.                              |\n");
-//        printf("|   3 - letra x com asteriscos.                                      |\n");
-//        printf("|   4 - figuras aleatorias.                                          |\n");
-//        printf("|   5 - opcao de obra de arte criada pelo aluno:                     |\n");
-//        printf("|   6 - sair.                                                        |\n");
-//        printf("|--------------------------------------------------------------------|\n");
-//        printf("Digite o tipo de figura basica desejada: ");
-//        scanf("%d", &opcao1);
-//        printf("Digite a quantidade de figura(menor ou igual a zero para aleatorio: )");
-//        if(opcao1 == 6){
-//            op1 = false;
-//        }else{
-//            printf("Opcao Invalida!!\n");
-//        }
-//    }
+
+
+    while(op1 == true){
+        printf("|--------------------------------------------------------------------|\n");
+        printf("|PROGRAMA GERADOR DE ARTE:                                           |\n");
+        printf("|=========================                                           |\n");
+        printf("|Escolha o tipo de figura basica a ser usada para criar a obra:      |\n");
+        printf("|   1 - asterisco simples.                                           |\n");
+        printf("|   2 - simbolo de soma com asteriscos.                              |\n");
+        printf("|   3 - letra x com asteriscos.                                      |\n");
+        printf("|   4 - figuras aleatorias.                                          |\n");
+        printf("|   5 - opcao de obra de arte criada pelo aluno:                     |\n");
+        printf("|   6 - sair.                                                        |\n");
+        printf("|--------------------------------------------------------------------|\n");
+        printf("Digite o tipo de figura basica desejada: ");
+        scanf("%d", &opcao1);
+        printf("Digite a quantidade de figura(menor ou igual a zero para aleatorio: )");
+        if(opcao1 == 6){
+            op1 = false;
+        }else{
+            printf("Opcao Invalida!!\n");
+        }
+    }
     return 0;
 }
