@@ -65,7 +65,6 @@ coordenadasQuadro criaCoordenada(Tela *tela,int linhas,int colunas) {
         verify = 0;
     }
     return coordenadas;
-
 }
 
 void insereFigura(Tela *tela,char **figura,coordenadasQuadro *coordenadas){
@@ -81,24 +80,16 @@ void insereFigura(Tela *tela,char **figura,coordenadasQuadro *coordenadas){
     }
 }
 
-void CriaSoma(Tela *tela, int quantidade){
-    srand(time(NULL));
-    int coluna, linha;
-    for(int i = 0; i < quantidade; i++){
-        while (true){
-            linha = 1 + (rand() % LINHASQUADRO-2);
-            coluna = 1 + (rand() % COLUNASQUADRO-2);
-            if(tela->quadro[linha][coluna] == ' ' && tela->quadro[linha+1][coluna] == ' ' && tela->quadro[linha-1][coluna] == ' ' && tela->quadro[linha][coluna-1] == ' ' && tela->quadro[linha][coluna+1] == ' '){
-                break;
-            }
-        }
-        tela->quadro[linha][coluna] = '*';
-        tela->quadro[linha+1][coluna] = '*';
-        tela->quadro[linha-1][coluna] = '*';
-        tela->quadro[linha][coluna+1] = '*';
-        tela->quadro[linha][coluna-1] = '*';
-        
+int geradorAleatorio(int numero, int *tipofigura){
+    if(numero <= 0){
+        *tipofigura = 4;
+        return 1 + rand() % 100;
     }
+    if(numero > 100){
+        *tipofigura = 4;
+        return 100;
+    }
+    return numero;
 }
 
 void imprimeQuadro(Tela *tela){

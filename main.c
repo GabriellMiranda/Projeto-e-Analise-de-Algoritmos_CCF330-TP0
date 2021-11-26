@@ -6,13 +6,13 @@ int main(){
     printf("|        Programacao e Analise de Algoritmos - CCF 330               |\n");
     printf("|                       Trabalho Pratico                             |\n");
     printf("|                  Gabriel Miranda - EFO3857                         |\n");
-    printf("|                    Pedro Maia - EF08983                            |\n");
+    printf("|                    Pedro Maia - EF03878                            |\n");
     printf("|--------------------------------------------------------------------|\n\n");
     int tipofigura;
     int qtdfiguras;
     Tela tela;
-    criaQuadro(&tela);
     while(1){
+        criaQuadro(&tela);
         printf("|--------------------------------------------------------------------|\n");
         printf("|PROGRAMA GERADOR DE ARTE:                                           |\n");
         printf("|=========================                                           |\n");
@@ -27,6 +27,8 @@ int main(){
         scanf("%d", &tipofigura);
         printf("\nDigite a quantidade de figura(menor ou igual a zero para aleatorio): ");
         scanf("%d", &qtdfiguras);
+        qtdfiguras = geradorAleatorio(qtdfiguras, &tipofigura);
+        printf("\n\nValores:tipo de figura:%d, numero de figuras:%d", tipofigura, qtdfiguras);
         if(tipofigura <= 0 || tipofigura >=6){
             break;
         }
