@@ -15,36 +15,55 @@ void criaQuadro(Tela *tela){
         }
     }
 }
-void allocaFiguras(Tela *tela,char  **figura,int linhas,int colunas,int quantidade){
+Tela allocaFiguras(char  **figura,int linhas,int colunas,int quantidade){
     srand(time(NULL));
-    for(int i = 0;i<quantidade;i++){
-        coordenadasQuadro coordenadas = criaCoordenada(tela,linhas,colunas);
-        insereFigura(tela,figura,&coordenadas);
+    Tela telaAux;
+    coordenadasQuadro coordenadas;
+    coordenadas.linhaInicio = -1;
+    while (coordenadas.linhaInicio == -1) {
+        criaQuadro(&telaAux);
+        for (int i = 0; i < quantidade; i++) {
+            coordenadas = criaCoordenada(&telaAux, linhas, colunas);
+            if(coordenadas.linhaInicio == -1){
+                break;
+            }
+            insereFigura(&telaAux, figura, &coordenadas);
+        }
     }
+    return telaAux;
 }
-void allocaFigurasAleatorias(Tela *tela,int quantidade){
+Tela allocaFigurasAleatorias(int quantidade){
     srand(time(NULL));
     int opcao;
-    for(int i = 0;i<quantidade;i++) {
-        opcao = rand() % 3;
-        if(opcao == 0){
-            coordenadasQuadro coordenadas = criaCoordenada(tela,LINHASSIMBOLOPONTO,COLUNASSIMBOLOPONTO);
-            insereFigura(tela,criaFiguraPonto(), &coordenadas);
-        }
-        else if(opcao == 1){
-            coordenadasQuadro coordenadas = criaCoordenada(tela,LINHASIMBOLOSOMA,COLUNASSIMBOLOSOMA);
-            insereFigura(tela,criaFiguraSoma(),&coordenadas);
-        }
-        else if(opcao == 2){
-            coordenadasQuadro coordenadas = criaCoordenada(tela,LINHASSIMBOLOX,COLUNASSIMBOLOX);
-            insereFigura(tela,criaFiguraX(),&coordenadas);
+    Tela telaAux;
+    coordenadasQuadro coordenadas;
+    coordenadas.linhaInicio = -1;
+    while (coordenadas.linhaInicio == -1) {
+        criaQuadro(&telaAux);
+        for (int i = 0; i < quantidade; i++) {
+            opcao = rand() % 3;
+            if (opcao == 0) {
+                coordenadas = criaCoordenada(&telaAux, LINHASSIMBOLOPONTO, COLUNASSIMBOLOPONTO);
+                insereFigura(&telaAux, criaFiguraPonto(), &coordenadas);
+            } else if (opcao == 1) {
+                coordenadas = criaCoordenada(&telaAux, LINHASIMBOLOSOMA, COLUNASSIMBOLOSOMA);
+                insereFigura(&telaAux, criaFiguraSoma(), &coordenadas);
+            } else if (opcao == 2) {
+                coordenadas = criaCoordenada(&telaAux, LINHASSIMBOLOX, COLUNASSIMBOLOX);
+                insereFigura(&telaAux, criaFiguraX(), &coordenadas);
+            }
+            else if(coordenadas.linhaInicio == -1){
+                break;
+            }
         }
     }
+    return telaAux;
 }
 coordenadasQuadro criaCoordenada(Tela *tela,int linhas,int colunas) {
     coordenadasQuadro coordenadas;
     int linha, coluna;
     int verify = 0;
+    int tentativas = 0;
     while (1) {
         linha = rand() % LINHASQUADRO + 1;
         coluna = rand() % COLUNASQUADRO + 1;
@@ -62,7 +81,15 @@ coordenadasQuadro criaCoordenada(Tela *tela,int linhas,int colunas) {
             coordenadas.colunaFim = coluna + colunas;
             break;
         }
+        else if(tentativas > 50){
+            coordenadas.linhaInicio = -1;
+            coordenadas.linhaFim = -1;
+            coordenadas.colunaInicio = -1;
+            coordenadas.colunaFim = -1;
+            break;
+        }
         verify = 0;
+        tentativas++;
     }
     return coordenadas;
 }

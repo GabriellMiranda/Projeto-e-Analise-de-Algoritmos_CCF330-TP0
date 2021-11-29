@@ -28,24 +28,23 @@ int main(){
         printf("\nDigite a quantidade de figura(menor ou igual a zero para aleatorio): ");
         scanf("%d", &qtdfiguras);
         qtdfiguras = geradorAleatorio(qtdfiguras, &tipofigura);
-        printf("\n\nValores:tipo de figura:%d, numero de figuras:%d", tipofigura, qtdfiguras);
         if(tipofigura <= 0 || tipofigura >=6){
             break;
         }
         else if(tipofigura == 1){
-            allocaFiguras(&tela,criaFiguraPonto(),LINHASSIMBOLOPONTO,COLUNASSIMBOLOPONTO,qtdfiguras);
+            tela = allocaFiguras(criaFiguraPonto(),LINHASSIMBOLOPONTO,COLUNASSIMBOLOPONTO,qtdfiguras);
             imprimeQuadro(&tela);
         }
         else if(tipofigura == 2){
-            allocaFiguras(&tela,criaFiguraSoma(),LINHASIMBOLOSOMA,COLUNASSIMBOLOSOMA,qtdfiguras);
+            tela = allocaFiguras(criaFiguraSoma(),LINHASIMBOLOSOMA,COLUNASSIMBOLOSOMA,qtdfiguras);
             imprimeQuadro(&tela);
         }
         else if(tipofigura == 3){
-            allocaFiguras(&tela,criaFiguraX(),LINHASSIMBOLOX,COLUNASSIMBOLOX,qtdfiguras);
+            tela = allocaFiguras(criaFiguraX(),LINHASSIMBOLOX,COLUNASSIMBOLOX,qtdfiguras);
             imprimeQuadro(&tela);
         }
         else if(tipofigura == 4){
-            allocaFigurasAleatorias(&tela,qtdfiguras);
+            tela = allocaFigurasAleatorias(qtdfiguras);
             imprimeQuadro(&tela);
         }
     }
