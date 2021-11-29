@@ -44,16 +44,22 @@ Tela allocaFigurasAleatorias(int quantidade){
             opcao = rand() % 3;
             if (opcao == 0) {
                 coordenadas = criaCoordenada(&telaAux, LINHASSIMBOLOPONTO, COLUNASSIMBOLOPONTO);
+                if(coordenadas.linhaInicio == -1){
+                    break;
+                }
                 insereFigura(&telaAux, criaFiguraPonto(), &coordenadas);
             } else if (opcao == 1) {
                 coordenadas = criaCoordenada(&telaAux, LINHASIMBOLOSOMA, COLUNASSIMBOLOSOMA);
+                if(coordenadas.linhaInicio == -1){
+                    break;
+                }
                 insereFigura(&telaAux, criaFiguraSoma(), &coordenadas);
             } else if (opcao == 2) {
                 coordenadas = criaCoordenada(&telaAux, LINHASSIMBOLOX, COLUNASSIMBOLOX);
+                if(coordenadas.linhaInicio == -1){
+                    break;
+                }
                 insereFigura(&telaAux, criaFiguraX(), &coordenadas);
-            }
-            else if(coordenadas.linhaInicio == -1){
-                break;
             }
         }
     }
