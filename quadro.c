@@ -39,27 +39,22 @@ Tela allocaFigurasAleatorias(int quantidade){
     coordenadasQuadro coordenadas;
     coordenadas.linhaInicio = -1;
     while (coordenadas.linhaInicio == -1) {
+        printf("Pedro\n");
         criaQuadro(&telaAux);
         for (int i = 0; i < quantidade; i++) {
             opcao = rand() % 3;
             if (opcao == 0) {
                 coordenadas = criaCoordenada(&telaAux, LINHASSIMBOLOPONTO, COLUNASSIMBOLOPONTO);
-                if(coordenadas.linhaInicio == -1){
-                    break;
-                }
                 insereFigura(&telaAux, criaFiguraPonto(), &coordenadas);
             } else if (opcao == 1) {
                 coordenadas = criaCoordenada(&telaAux, LINHASIMBOLOSOMA, COLUNASSIMBOLOSOMA);
-                if(coordenadas.linhaInicio == -1){
-                    break;
-                }
                 insereFigura(&telaAux, criaFiguraSoma(), &coordenadas);
             } else if (opcao == 2) {
                 coordenadas = criaCoordenada(&telaAux, LINHASSIMBOLOX, COLUNASSIMBOLOX);
-                if(coordenadas.linhaInicio == -1){
-                    break;
-                }
                 insereFigura(&telaAux, criaFiguraX(), &coordenadas);
+            }
+            if(coordenadas.linhaInicio == -1){
+                break;
             }
         }
     }
