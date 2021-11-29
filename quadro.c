@@ -39,7 +39,6 @@ Tela allocaFigurasAleatorias(int quantidade){
     coordenadasQuadro coordenadas;
     coordenadas.linhaInicio = -1;
     while (coordenadas.linhaInicio == -1) {
-        printf("Pedro\n");
         criaQuadro(&telaAux);
         for (int i = 0; i < quantidade; i++) {
             opcao = rand() % 3;
