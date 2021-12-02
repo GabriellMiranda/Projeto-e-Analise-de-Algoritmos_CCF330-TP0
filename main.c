@@ -29,6 +29,7 @@ int main(){
         printf("\nDigite a quantidade de figura(menor ou igual a zero para aleatorio): ");
         scanf("%d", &qtdfiguras);
         qtdfiguras = geradorAleatorio(qtdfiguras, &tipofigura);
+        printf("\ntipo de figura:%d, numero de figuras:%d",tipofigura, qtdfiguras);
         if(tipofigura <= 0 || tipofigura >=6){
             break;
         }
