@@ -1,7 +1,3 @@
-//
-// Created by pedro on 24/11/2021.
-//
-
 #include "figuras.h"
 char** allocaEspaco(int linhas,int colunas){
     char **matriz = (char**) malloc(linhas*2*sizeof(char));

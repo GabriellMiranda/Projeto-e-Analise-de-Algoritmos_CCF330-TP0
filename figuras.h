@@ -1,7 +1,3 @@
-//
-// Created by pedro on 24/11/2021.
-//
-
 #ifndef AJUDA_FIGURAS_H
 #define AJUDA_FIGURAS_H
 

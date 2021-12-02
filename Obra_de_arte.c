@@ -1,7 +1,3 @@
-//
-// Created by pedro on 01/12/2021.
-//
-
 #include "Obra_de_arte.h"
 void criaOrelhaEsquerda(partesObra *partes){
     int colunaBarraSimples;

@@ -1,7 +1,3 @@
-//
-// Created by pedro on 01/12/2021.
-//
-
 #ifndef AJUDA_OBRA_DE_ARTE_H
 #define AJUDA_OBRA_DE_ARTE_H
 
