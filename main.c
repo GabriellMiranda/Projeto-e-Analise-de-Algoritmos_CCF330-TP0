@@ -1,6 +1,7 @@
 #include "quadro.h"
-
+#include "Obra_de_arte.h"
 int main(){
+
     printf("\n\n");
     printf("|--------------------------------------------------------------------|\n");
     printf("|        Programacao e Analise de Algoritmos - CCF 330               |\n");
@@ -11,8 +12,8 @@ int main(){
     int tipofigura;
     int qtdfiguras;
     Tela tela;
+    criaQuadro(&tela);
     while(1){
-        criaQuadro(&tela);
         printf("|--------------------------------------------------------------------|\n");
         printf("|PROGRAMA GERADOR DE ARTE:                                           |\n");
         printf("|=========================                                           |\n");
@@ -45,6 +46,13 @@ int main(){
         }
         else if(tipofigura == 4){
             tela = allocaFigurasAleatorias(qtdfiguras);
+            imprimeQuadro(&tela);
+        }
+        else if(tipofigura == 5){
+            obraDeArte obra;
+            partesObra partes = criaPartes();
+            constroiObra(&partes,&obra);
+            tela = allocaFiguras(organizaObra(&obra),linhasObraFinal,colunasObraFinal,qtdfiguras);
             imprimeQuadro(&tela);
         }
     }

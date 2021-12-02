@@ -4,9 +4,10 @@
 #define LINHASQUADRO 20
 #define COLUNASQUADRO 80
 
-#include "figuras.h"
+#include "Obra_de_arte.h"
 #include <stdbool.h>
 #include <time.h>
+
 typedef struct{
     char quadro[LINHASQUADRO][COLUNASQUADRO];
 }Tela;

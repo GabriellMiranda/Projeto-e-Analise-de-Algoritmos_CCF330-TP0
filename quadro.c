@@ -20,6 +20,9 @@ Tela allocaFiguras(char  **figura,int linhas,int colunas,int quantidade){
     Tela telaAux;
     coordenadasQuadro coordenadas;
     coordenadas.linhaInicio = -1;
+    if(linhas == linhasObraFinal && quantidade > 2){
+        quantidade = 2;
+    }
     while (coordenadas.linhaInicio == -1) {
         criaQuadro(&telaAux);
         for (int i = 0; i < quantidade; i++) {
