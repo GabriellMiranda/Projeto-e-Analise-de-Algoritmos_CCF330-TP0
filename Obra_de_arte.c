@@ -249,13 +249,15 @@ void criaBarrigaEpatinhaDog(partesObra *partes){
     }
 }
 char** organizaObra(obraDeArte *obra){
-    char **figura = allocaEspaco(50,50);
+    char **figura = allocaEspaco(70,70);
+    int linha = 0;
     int coluna = 0;
-    for(int i = 0;i<18;i++){
+       for(int i = 0;i<18;i++){
         for(int j = 18;j<52;j++){
-            figura[i][coluna] = obra->arte[i][j];
+            figura[linha][coluna] = obra->arte[i][j];
             coluna++;
         }
+        linha++;
         coluna = 0;
     }
     return figura;

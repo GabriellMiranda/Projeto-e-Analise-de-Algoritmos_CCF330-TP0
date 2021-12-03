@@ -59,3 +59,4 @@ void imprimeFigura(char **figura,int linhas,int colunas){
         printf("\n");
     }
 }
+
