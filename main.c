@@ -1,7 +1,6 @@
 #include "quadro.h"
-#include "Obra_de_arte.h"
+#include "Figura_dog.h"
 int main(){
-
     printf("\n\n");
     printf("|--------------------------------------------------------------------|\n");
     printf("|        Programacao e Analise de Algoritmos - CCF 330               |\n");
@@ -29,7 +28,8 @@ int main(){
         printf("\nDigite a quantidade de figura(menor ou igual a zero para aleatorio): ");
         scanf("%d", &qtdfiguras);
         qtdfiguras = geradorAleatorio(qtdfiguras, &tipofigura);
-        printf("\ntipo de figura:%d, numero de figuras:%d",tipofigura, qtdfiguras);
+        if(tipofigura!=5)
+            printf("\ntipo de figura:%d, numero de figuras:%d",tipofigura, qtdfiguras);
         if(tipofigura <= 0 || tipofigura >=6){
             break;
         }
@@ -50,10 +50,13 @@ int main(){
             imprimeQuadro(&tela);
         }
         else if(tipofigura == 5){
+            int dogs = 0;
+            int casas = 0;
             obraDeArte obra;
             partesObra partes = criaPartes();
             constroiObra(&partes,&obra);
-            tela = allocaFiguras(organizaObra(&obra),linhasObraFinal,colunasObraFinal,qtdfiguras);
+            tela = allocaObra(qtdfiguras,&casas,&dogs);
+            printf("\ntipo de figura:%d, numero de dogs: %d , numero de casas: %d",tipofigura,dogs,casas);
             imprimeQuadro(&tela);
         }
     }

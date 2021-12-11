@@ -35,6 +35,47 @@ Tela allocaFiguras(char  **figura,int linhas,int colunas,int quantidade){
     }
     return telaAux;
 }
+Tela allocaObra(int quantidade,int *casas,int *dogs){
+    srand(time(NULL));
+    int opcao;
+    int qtdDog = 0;
+    int qtdCasa = 0;
+    Tela telaAux;
+    coordenadasQuadro coordenadas;
+    coordenadas.linhaInicio = -1;
+    while (coordenadas.linhaInicio == -1){
+        qtdDog = 0;
+        qtdCasa = 0;
+        criaQuadro(&telaAux);
+        for(int i = 0;i<quantidade;i++){
+            opcao = rand()%2;
+            if((qtdDog == 1 && qtdCasa==7)){
+                *casas = qtdCasa;
+                *dogs = qtdDog;
+                return telaAux;
+            }
+            if(opcao == 0 && qtdDog < 1){
+                obraDeArte obra;
+                partesObra partes = criaPartes();
+                constroiObra(&partes,&obra);
+                coordenadas = criaCoordenada(&telaAux,linhasObraFinal,colunasObraFinal);
+                insereFigura(&telaAux, organizaObra(&obra),&coordenadas);
+                qtdDog++;
+            }
+            else if((opcao == 1 && qtdCasa<=11 && qtdDog == 0) || (qtdDog == 1 && qtdCasa<=7)){
+                coordenadas = criaCoordenada(&telaAux,TAMLINHACASA,TAMCOLUNACASA);
+                insereFigura(&telaAux,criaCasaDog(),&coordenadas);
+                qtdCasa++;
+            }
+            if(coordenadas.linhaInicio == -1 || qtdDog == 2 || (qtdCasa == 12 && qtdDog == 0)){
+                break;
+            }
+        }
+    }
+    *casas = qtdCasa;
+    *dogs = qtdDog;
+    return telaAux;
+}
 Tela allocaFigurasAleatorias(int quantidade){
     srand(time(NULL));
     int opcao;

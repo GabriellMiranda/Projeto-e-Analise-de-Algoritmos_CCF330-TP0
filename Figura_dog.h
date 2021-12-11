@@ -1,5 +1,5 @@
-#ifndef AJUDA_OBRA_DE_ARTE_H
-#define AJUDA_OBRA_DE_ARTE_H
+#ifndef AJUDA_FIGURA_DOG_H
+#define AJUDA_FIGURA_DOG_H
 
 #include "figuras.h"
 
@@ -46,4 +46,4 @@ void criaOrelhaEsquerda(partesObra *partes);
 void criaOrelhaDireita(partesObra *partes);
 char** organizaObra(obraDeArte *obra);
 
-#endif //AJUDA_OBRA_DE_ARTE_H
+#endif //AJUDA_FIGURA_DOG_H

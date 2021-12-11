@@ -1,4 +1,4 @@
-#include "Obra_de_arte.h"
+#include "Figura_dog.h"
 void criaOrelhaEsquerda(partesObra *partes){
     int colunaBarraSimples;
     int colunaBarraInvertida;
