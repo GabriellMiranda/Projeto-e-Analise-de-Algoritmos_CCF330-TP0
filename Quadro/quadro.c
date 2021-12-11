@@ -42,6 +42,11 @@ Tela allocaObra(int quantidade,int *casas,int *dogs){
     int qtdCasa = 0;
     Tela telaAux;
     coordenadasQuadro coordenadas;
+    obraDeArte obra;
+    partesObra partes = criaPartes();
+    constroiObra(&partes,&obra);
+    char **Dog = organizaObra(&obra);
+    char **Casa = criaCasaDog();
     coordenadas.linhaInicio = -1;
     while (coordenadas.linhaInicio == -1){
         qtdDog = 0;
@@ -55,16 +60,13 @@ Tela allocaObra(int quantidade,int *casas,int *dogs){
                 return telaAux;
             }
             if(opcao == 0 && qtdDog < 1){
-                obraDeArte obra;
-                partesObra partes = criaPartes();
-                constroiObra(&partes,&obra);
                 coordenadas = criaCoordenada(&telaAux,linhasObraFinal,colunasObraFinal);
-                insereFigura(&telaAux, organizaObra(&obra),&coordenadas);
+                insereFigura(&telaAux, Dog,&coordenadas);
                 qtdDog++;
             }
             else if((opcao == 1 && qtdCasa<=11 && qtdDog == 0) || (qtdDog == 1 && qtdCasa<=7)){
                 coordenadas = criaCoordenada(&telaAux,TAMLINHACASA,TAMCOLUNACASA);
-                insereFigura(&telaAux,criaCasaDog(),&coordenadas);
+                insereFigura(&telaAux,Casa,&coordenadas);
                 qtdCasa++;
             }
             if(coordenadas.linhaInicio == -1 || qtdDog == 2 || (qtdCasa == 12 && qtdDog == 0)){
