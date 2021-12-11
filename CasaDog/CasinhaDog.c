@@ -5,7 +5,7 @@
 #include "CasinhaDog.h"
 
 char** criaCorpoCasa(int colunas){
-    char** corpo = allocaEspaco(10,10);
+    char** corpo = allocaEspaco(50,50);
     for(int i = 0;i<colunas/2 + 1;i++){
         for(int j = 0;j<colunas;j++){
             if(i == 0 || i == colunas/2){
@@ -21,7 +21,7 @@ char** criaCorpoCasa(int colunas){
     return corpo;
 }
 char** criaTelhado(){
-    char** telhado = allocaEspaco(20, 20);
+    char** telhado = allocaEspaco(50, 50);
     int positionEsquerda = 5;
     int positionDireita = 5;
     for(int i = 0;i<4;i++){
@@ -61,7 +61,7 @@ coordenadasCasa *criaCoordenadasCasa(){
     return coordenadas;
 }
 char** criaCasaDog(){
-    char **casa = allocaEspaco(30,30);
+    char **casa = allocaEspaco(50,50);
     for(int i = 0;i<9;i++){
         for(int j = 0;j<10;j++){
             casa[i][j] = ' ';

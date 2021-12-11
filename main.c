@@ -1,5 +1,5 @@
-#include "quadro.h"
-#include "Figura_dog.h"
+#include "Quadro/quadro.h"
+#include "FiguraDog/Figura_dog.h"
 int main(){
     printf("\n\n");
     printf("|--------------------------------------------------------------------|\n");

@@ -5,7 +5,7 @@
 #ifndef AJUDA_CASINHADOG_H
 #define AJUDA_CASINHADOG_H
 
-#include "Figura_dog.h"
+#include "../FiguraDog/Figura_dog.h"
 
 #define TAMCORPOCASA 8
 #define TAMPORTACASA 4

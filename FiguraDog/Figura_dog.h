@@ -1,7 +1,7 @@
 #ifndef AJUDA_FIGURA_DOG_H
 #define AJUDA_FIGURA_DOG_H
 
-#include "figuras.h"
+#include "../Figuras/figuras.h"
 
 #define linhasObraFinal 18
 #define colunasObraFinal 34

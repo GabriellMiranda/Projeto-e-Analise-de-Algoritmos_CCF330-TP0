@@ -1,4 +1,4 @@
-compile: main.c figuras.c quadro.c Obra_de_arte.c
-	gcc main.c figuras.c quadro.c Obra_de_arte.c -o run
+compile: main.c ./Figuras/figuras.c ./Quadro/quadro.c ./FiguraDog/Figura_dog.c ./CasaDog/CasinhaDog.c
+	gcc main.c ./Figuras/figuras.c ./Quadro/quadro.c ./FiguraDog/Figura_dog.c ./CasaDog/CasinhaDog.c -o run
 run:
 	./run

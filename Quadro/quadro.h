@@ -4,7 +4,7 @@
 #define LINHASQUADRO 20
 #define COLUNASQUADRO 80
 
-#include "CasinhaDog.h"
+#include "../CasaDog/CasinhaDog.h"
 #include <stdbool.h>
 #include <time.h>
 
