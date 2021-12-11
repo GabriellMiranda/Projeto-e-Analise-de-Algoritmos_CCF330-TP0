@@ -1,5 +1,5 @@
 # PAA_CCF330-TP0
-TP0-Projeto e Analise de Algoritmos
+TP0- Obras de Arte
 
 # Objetivo
 O objetivo deste trabalho prático foi desenvolver um quadro, em que nele fossem desenhados asteriscos,  um desenho de soma com asteriscos, e um desenho x, com asterisco, aliado a outra obra de arte feita pelo dupla. 
